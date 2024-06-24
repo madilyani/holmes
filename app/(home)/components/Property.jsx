@@ -145,7 +145,7 @@ export default function Property() {
     infinite: false,
     slidesToShow: 5.6,
     slidesToScroll: 1,
-    arrows: false,
+    arrows: true,
     dots: false,
     speed: 600,
     responsive: [

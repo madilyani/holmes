@@ -130,6 +130,13 @@
     }
     &-slider {
       margin: 0 -10px;
+      &.sm {
+        .slick {
+          &-arrow {
+            top: 26%;
+          }
+        }
+      }
     }
     .slick {
       &-track {
@@ -141,6 +148,53 @@
       }
       &-list {
         overflow: visible !important;
+      }
+      &-arrow {
+        width: 36px;
+        height: 36px;
+        position: absolute;
+        top: 35%;
+        z-index: 3;
+        background-color: $white;
+        border-radius: 50%;
+        box-shadow: 0 3px 6px rgba($black, 0.2);
+        &:hover {
+          background-color: $primary;
+          &::before {
+            border-color: $white;
+          }
+        }
+        &:focus {
+          background-color: $primary;
+          &::before {
+            border-color: $white;
+          }
+        }
+        &::before {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 9px;
+          height: 9px;
+          border-top: 2px solid $primary;
+          border-right: 2px solid $primary;
+          transform: translate(-30%, -50%) rotate(-135deg);
+          content: "";
+          opacity: 1 !important;
+          transition: 0.3s ease;
+        }
+      }
+      &-prev {
+        left: -8px;
+        &.slick-disabled {
+          opacity: 0;
+        }
+      }
+      &-next {
+        right: -8px;
+        &::before {
+          transform: translate(-70%, -50%) rotate(45deg);
+        }
       }
     }
   }
@@ -240,6 +294,13 @@
 // 1180px
 @mixin property-xlg-xxlg {
   .property {
+    &__inner {
+      .slick {
+        &-arrow {
+          top: 33%;
+        }
+      }
+    }
     &Card {
       width: calc(20% - 20px);
     }
@@ -273,6 +334,24 @@
 // 750px
 @mixin property-sm-md {
   .property {
+    &__inner {
+      &-slider {
+        &.sm {
+          .slick {
+            &-arrow {
+              top: 33%;
+            }
+          }
+        }
+      }
+      .slick {
+        &-arrow {
+          top: 38%;
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
   }
 }
 // 650px
@@ -765,52 +844,5 @@
         }
       }
     }
-  }
-}
-.intro {
-}
-// 1380px
-@mixin intro-xxxlg-xxxxlg {
-  .intro {
-  }
-}
-// 1250px
-@mixin intro-xlg-xxlg-extra {
-  .intro {
-  }
-}
-// 1180px
-@mixin intro-xlg-xxlg {
-  .intro {
-  }
-}
-// 1024px
-@mixin intro-lg-xlg {
-  .intro {
-  }
-}
-// 930px
-@mixin intro-md-lg {
-  .intro {
-  }
-}
-// 750px
-@mixin intro-sm-md {
-  .intro {
-  }
-}
-// 650px
-@mixin intro-sm-md-extra {
-  .intro {
-  }
-}
-// 540px
-@mixin intro-xsm-sm {
-  .intro {
-  }
-}
-// 440px
-@mixin intro-xxsm-xsm {
-  .intro {
   }
 }

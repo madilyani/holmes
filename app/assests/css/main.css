@@ -855,6 +855,9 @@ p.sm {
 .property__inner-slider {
   margin: 0 -10px;
 }
+.property__inner-slider.sm .slick-arrow {
+  top: 26%;
+}
 .property__inner .slick-track {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
@@ -866,6 +869,57 @@ p.sm {
 }
 .property__inner .slick-list {
   overflow: visible !important;
+}
+.property__inner .slick-arrow {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  top: 35%;
+  z-index: 3;
+  background-color: #fff;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+.property__inner .slick-arrow:hover {
+  background-color: #339ce3;
+}
+.property__inner .slick-arrow:hover::before {
+  border-color: #fff;
+}
+.property__inner .slick-arrow:focus {
+  background-color: #339ce3;
+}
+.property__inner .slick-arrow:focus::before {
+  border-color: #fff;
+}
+.property__inner .slick-arrow::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 9px;
+  height: 9px;
+  border-top: 2px solid #339ce3;
+  border-right: 2px solid #339ce3;
+  -webkit-transform: translate(-30%, -50%) rotate(-135deg);
+          transform: translate(-30%, -50%) rotate(-135deg);
+  content: "";
+  opacity: 1 !important;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.property__inner .slick-prev {
+  left: -8px;
+}
+.property__inner .slick-prev.slick-disabled {
+  opacity: 0;
+}
+.property__inner .slick-next {
+  right: -8px;
+}
+.property__inner .slick-next::before {
+  -webkit-transform: translate(-70%, -50%) rotate(45deg);
+          transform: translate(-70%, -50%) rotate(45deg);
 }
 .propertyTag {
   white-space: nowrap;
@@ -1371,6 +1425,9 @@ p.sm {
     padding: 80px 40px;
   }
 
+  .property__inner .slick-arrow {
+    top: 33%;
+  }
   .propertyCard {
     width: calc(20% - 20px);
   }
@@ -1762,6 +1819,15 @@ p.sm {
   }
   .agents__inner .slick-slide {
     margin: 0 10px;
+  }
+
+  .property__inner-slider.sm .slick-arrow {
+    top: 33%;
+  }
+  .property__inner .slick-arrow {
+    top: 38%;
+    width: 30px;
+    height: 30px;
   }
 }
 @media (max-width: 650px) {

@@ -93,7 +93,7 @@ export default function Blog() {
     infinite: false,
     slidesToShow: 4.9,
     slidesToScroll: 1,
-    arrows: false,
+    arrows: true,
     dots: false,
     speed: 600,
     responsive: [
@@ -131,28 +131,28 @@ export default function Blog() {
     infinite: false,
     slidesToShow: 7,
     slidesToScroll: 1,
-    arrows: false,
+    arrows: true,
     dots: false,
     speed: 600,
     responsive: [
       {
         breakpoint: 1380,
         settings: {
-          slidesToShow: 6.2,
+          slidesToShow: 6,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 1180,
         settings: {
-          slidesToShow: 5.5,
+          slidesToShow: 5,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 930,
         settings: {
-          slidesToShow: 4.2,
+          slidesToShow: 4,
           slidesToScroll: 1,
         },
       },
@@ -190,7 +190,7 @@ export default function Blog() {
             <div className="property__inner-title">
               <h3>Market insights and news</h3>
             </div>
-            <Slider className="property__inner-slider" {...settings2}>
+            <Slider className="property__inner-slider sm" {...settings2}>
               {newsList.map((item, index) => {
                 return <NewsItem {...item} key={index} />;
               })}
