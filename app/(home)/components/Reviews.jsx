@@ -61,7 +61,9 @@ export default function Reviews() {
               </button>
               <button
                 type="button"
-                className={type === "schedule" ? "reviewsTab active" : "reviewsTab"}
+                className={
+                  type === "schedule" ? "reviewsTab active" : "reviewsTab"
+                }
                 onClick={() => setType("schedule")}
               >
                 Schedule a Visit
