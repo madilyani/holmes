@@ -53,7 +53,7 @@ export default function Reviews() {
               <a href="#" className="reviewsTab active">
                 List Your Property
               </a>
-              <a href="#" className="reviewsTab big">
+              <a href="#" className="reviewsTab">
                 Schedule a Visit
               </a>
             </div>
