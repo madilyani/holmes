@@ -1,5 +1,5 @@
 import { dislikeIcon, likeIcon } from "@/app/Base/SVG";
-import React, { useState } from "react";
+import React from "react";
 const reviewsList = [
   {
     id: "1",
@@ -42,51 +42,7 @@ const reviewsList = [
     dislikes: null,
   },
 ];
-const reviewsList2 = [
-  {
-    id: "1",
-    avatar: "/images/reviews/2.png",
-    name: "Ana",
-    time: "2 days ago",
-    rate: 5,
-    text: "Brazuca Real Estate has everything you need to find your dream home. The listings are always up to date and the platform is easy to use. I highly recommend it to anyone looking for a property in Brazil.",
-    likes: 15,
-    dislikes: null,
-  },
-  {
-    id: "2",
-    avatar: "/images/reviews/1.png",
-    name: <>Maur\u00edcio</>,
-    time: "1 day ago",
-    rate: 4,
-    text: "I was blown away by the selection of properties on Brazuca Real Estate. The search interface is super intuitive and I was able to find my perfect home in no time.",
-    likes: 10,
-    dislikes: null,
-  },
-  {
-    id: "3",
-    avatar: "/images/reviews/2.png",
-    name: "Ana",
-    time: "2 days ago",
-    rate: 5,
-    text: "Brazuca Real Estate has everything you need to find your dream home. The listings are always up to date and the platform is easy to use. I highly recommend it to anyone looking for a property in Brazil.",
-    likes: 15,
-    dislikes: null,
-  },
-  {
-    id: "4",
-    avatar: "/images/reviews/1.png",
-    name: <>Maur\u00edcio</>,
-    time: "1 day ago",
-    rate: 4,
-    text: "I was blown away by the selection of properties on Brazuca Real Estate. The search interface is super intuitive and I was able to find my perfect home in no time.",
-    likes: 10,
-    dislikes: null,
-  },
-];
 export default function Reviews() {
-  const [type, setType] = useState("list");
-
   return (
     <section className="reviews">
       <div className="auto__container">
@@ -94,46 +50,22 @@ export default function Reviews() {
           <div className="reviews__inner-title">
             <h2>Quer vender ou alugar seu imóvel?</h2>
             <div className="reviews__inner-tabs">
-              <button
-                type="button"
-                className={type === "list" ? "reviewsTab active" : "reviewsTab"}
-                onClick={() => setType("list")}
-              >
+              <a href="#" className="reviewsTab active">
                 List Your Property
-              </button>
-              <button
-                type="button"
-                className={
-                  type === "schedule"
-                    ? "reviewsTab big active"
-                    : "reviewsTab big"
-                }
-                onClick={() => setType("schedule")}
-              >
+              </a>
+              <a href="#" className="reviewsTab big">
                 Schedule a Visit
-              </button>
+              </a>
             </div>
           </div>
-          {type === "list" && (
-            <div className="reviews__inner-content">
-              <h3>Testimonials</h3>
-              <div className="reviews__inner-row">
-                {reviewsList.map((item, index) => {
-                  return <ReviewsItem {...item} key={index} />;
-                })}
-              </div>
+          <div className="reviews__inner-content">
+            <h3>Testimonials</h3>
+            <div className="reviews__inner-row">
+              {reviewsList.map((item, index) => {
+                return <ReviewsItem {...item} key={index} />;
+              })}
             </div>
-          )}
-          {type === "schedule" && (
-            <div className="reviews__inner-content">
-              <h3>Testimonials</h3>
-              <div className="reviews__inner-row">
-                {reviewsList2.map((item, index) => {
-                  return <ReviewsItem {...item} key={index} />;
-                })}
-              </div>
-            </div>
-          )}
+          </div>
         </div>
       </div>
     </section>
