@@ -1,5 +1,5 @@
 import { dislikeIcon, likeIcon } from "@/app/Base/SVG";
-import React from "react";
+import React, { useState } from "react";
 const reviewsList = [
   {
     id: "1",
@@ -43,6 +43,8 @@ const reviewsList = [
   },
 ];
 export default function Reviews() {
+  const [type, setType] = useState("list");
+
   return (
     <section className="reviews">
       <div className="auto__container">
@@ -50,12 +52,20 @@ export default function Reviews() {
           <div className="reviews__inner-title">
             <h2>Quer vender ou alugar seu imóvel?</h2>
             <div className="reviews__inner-tabs">
-              <a href="#" className="reviewsTab active">
+              <button
+                type="button"
+                className={type === "list" ? "reviewsTab active" : "reviewsTab"}
+                onClick={() => setType("list")}
+              >
                 List Your Property
-              </a>
-              <a href="#" className="reviewsTab">
+              </button>
+              <button
+                type="button"
+                className={type === "schedule" ? "reviewsTab active" : "reviewsTab"}
+                onClick={() => setType("schedule")}
+              >
                 Schedule a Visit
-              </a>
+              </button>
             </div>
           </div>
           <div className="reviews__inner-content">
